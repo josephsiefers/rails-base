@@ -1,0 +1,13 @@
+
+version: '3.4'
+
+services:
+  rails-base:
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    container_name: rails-base
+    build: ./
+    image: josephsiefers/rails-base
+    volumes:
+      - ./:/home/app
+    ports:
+      - "127.0.0.1:3003:3000"
